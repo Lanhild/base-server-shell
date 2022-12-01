@@ -14,6 +14,7 @@ else
 fi
 
 # Variables definiton
+USER=$(whoami)
 DIR=$(pwd)/src
 DEST=${HOME}
 RED="$(printf '\033[31m')"  GREEN="$(printf '\033[32m')"  ORANGE="$(printf '\033[33m')"  BLUE="$(printf '\033[34m')"
@@ -48,7 +49,7 @@ init_submods() {
 # Change the default login shell
 change_sh() {
     echo -e "${CYAN}""[*] Changing shell for the current user...""${MAGENTA}"
-    usermod --shell /bin/zsh "$(whoami)"
+    sudo usermod --shell /bin/zsh "$USER"
 }
 
 ## Copy the configs
